@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/adesh/Desktop/EEG_project/eeg_env
+set -gx VIRTUAL_ENV /home/adesh/Desktop/EEG_project/ENIGMA_2.0_FALCONS/eeg_env
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

@@ -1,0 +1,22 @@
+import pickle
+from src.dataset_pipeline import create_feature_dataset
+from src.model import train_model
+from src.explainability import plot_feature_importance
+
+# Create dataset
+df = create_feature_dataset("data/raw")
+
+X = df.drop("label", axis=1)
+y = df["label"]
+
+# Train model
+model, accuracy = train_model(X, y)
+
+print("Model Accuracy:", accuracy)
+
+# Save model
+pickle.dump(model, open("models/trained_model.pkl", "wb"))
+print("Model saved successfully")
+
+# Plot feature importance
+plot_feature_importance(model, X.columns)
